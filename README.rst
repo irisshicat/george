@@ -1,6 +1,12 @@
 George
 ======
 
+This is an updated version of [George](https://github.com/dfm/george) by considering the new python package: triangle-plot and corner for [model.py](https://github.com/irisshicat/george/blob/master/docs/_code/model.py)
+
+
+
+-----------------
+
 **Fast and flexible Gaussian Process regression in Python.**
 
 .. image:: http://img.shields.io/travis/dfm/george/master.svg?style=flat
