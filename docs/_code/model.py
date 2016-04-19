@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+#import sys
+#print sys.path
+#sys.path.append('/home/lisun/Github/GPpython')
 from __future__ import division, print_function
 
 import emcee
-import triangle
+import corner
 import numpy as np
 import matplotlib.pyplot as pl
 
@@ -148,7 +151,8 @@ if __name__ == "__main__":
 
     # Make the corner plot.
     labels = [r"$\alpha$", r"$\ell$", r"$\sigma^2$"]
-    fig = triangle.corner(samples[:, 2:], truths=truth, labels=labels)
+    # fig = triangle.corner(samples[:, 2:], truths=truth, labels=labels)
+    fig = corner.corner(samples[:, 2:], truths=truth, labels=labels)
     fig.savefig("../_static/model/ind-corner.png", dpi=150)
 
     # Fit assuming GP.
@@ -175,5 +179,5 @@ if __name__ == "__main__":
     pl.savefig("../_static/model/gp-results.png", dpi=150)
 
     # Make the corner plot.
-    fig = triangle.corner(samples[:, 2:], truths=truth, labels=labels)
+    fig = corner.corner(samples[:, 2:], truths=truth, labels=labels)
     fig.savefig("../_static/model/gp-corner.png", dpi=150)
